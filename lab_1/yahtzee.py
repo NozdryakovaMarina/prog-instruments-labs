@@ -1,12 +1,12 @@
 class Yahtzee:
     @staticmethod
-    def chance(d1, d2, d3, d4, d5):
+    def chance(dice1, dice2, dice3, dice4, dice5):
         total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+        total += dice1
+        total += dice2
+        total += dice3
+        total += dice4
+        total += dice5
         return total
 
     @staticmethod
@@ -20,58 +20,58 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def ones( d1,  d2,  d3,  d4,  d5):
+    def ones(dice1, dice2, dice3, dice4, dice5):
         sum = 0
-        if (d1 == 1):
+        if (dice1 == 1):
             sum += 1
-        if (d2 == 1):
+        if (dice2 == 1):
             sum += 1
-        if (d3 == 1):
+        if (dice3 == 1):
             sum += 1
-        if (d4 == 1):
+        if (dice4 == 1):
             sum += 1
-        if (d5 == 1): 
+        if (dice5 == 1): 
             sum += 1
 
         return sum
     
     @staticmethod
-    def twos( d1,  d2,  d3,  d4,  d5):
+    def twos(dice1, dice2, dice3, dice4, dice5):
         sum = 0
-        if (d1 == 2):
+        if (dice1 == 2):
              sum += 2
-        if (d2 == 2):
+        if (dice2 == 2):
              sum += 2
-        if (d3 == 2):
+        if (dice3 == 2):
              sum += 2
-        if (d4 == 2):
+        if (dice4 == 2):
              sum += 2
-        if (d5 == 2):
+        if (dice5 == 2):
              sum += 2
         return sum
     
     @staticmethod
-    def threes( d1,  d2,  d3,  d4,  d5):
+    def threes(dice1, dice2, dice3, dice4, dice5):
         s = 0
-        if (d1 == 3):
+        if (dice1 == 3):
              s += 3
-        if (d2 == 3):
+        if (dice2 == 3):
              s += 3
-        if (d3 == 3):
+        if (dice3 == 3):
              s += 3
-        if (d4 == 3):
+        if (dice4 == 3):
              s += 3
-        if (d5 == 3):
+        if (dice5 == 3):
              s += 3
         return s
     
-    def __init__(self, d1, d2, d3, d4, _5):
+    def __init__(self, dice1, dice2, dice3, dice4, dice5):
         self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+        self.dice[0] = dice1
+        self.dice[1] = dice2
+        self.dice[2] = dice3
+        self.dice[3] = dice4
+        self.dice[4] = dice5
     
     def fours(self):
         sum = 0
@@ -96,13 +96,13 @@ class Yahtzee:
         return sum
     
     @staticmethod
-    def one_pair( d1,  d2,  d3,  d4,  d5):
+    def one_pair(dice1, dice2, dice3, dice4, dice5):
         counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+        counts[dice1-1] += 1
+        counts[dice2-1] += 1
+        counts[dice3-1] += 1
+        counts[dice4-1] += 1
+        counts[dice5-1] += 1
         at = 0
         for at in range(6):
             if (counts[6-at-1] == 2):
@@ -110,13 +110,13 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
+    def two_pair(dice1, dice2, dice3, dice4, dice5):
         counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+        counts[dice1-1] += 1
+        counts[dice2-1] += 1
+        counts[dice3-1] += 1
+        counts[dice4-1] += 1
+        counts[dice5-1] += 1
         n = 0
         score = 0
         for i in range(6):
@@ -130,39 +130,39 @@ class Yahtzee:
             return 0
     
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
+    def four_of_a_kind(dice1, dice2, dice3, dice4, dice5):
         tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+        tallies[dice1-1] += 1
+        tallies[dice2-1] += 1
+        tallies[dice3-1] += 1
+        tallies[dice4-1] += 1
+        tallies[dice5-1] += 1
         for i in range(6):
             if (tallies[i] == 4):
                 return (i+1) * 4
         return 0
     
     @staticmethod
-    def three_of_a_kind( d1,  d2,  d3,  d4,  d5):
+    def three_of_a_kind(dice1, dice2, dice3, dice4, dice5):
         t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
+        t[dice1-1] += 1
+        t[dice2-1] += 1
+        t[dice3-1] += 1
+        t[dice4-1] += 1
+        t[dice5-1] += 1
         for i in range(6):
             if (t[i] == 3):
                 return (i+1) * 3
         return 0
     
     @staticmethod
-    def small_straight( d1,  d2,  d3,  d4,  d5):
+    def small_straight(dice1, dice2, dice3, dice4, dice5):
         tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+        tallies[dice1-1] += 1
+        tallies[dice2-1] += 1
+        tallies[dice3-1] += 1
+        tallies[dice4-1] += 1
+        tallies[dice5-1] += 1
         if (tallies[0] == 1 and
             tallies[1] == 1 and
             tallies[2] == 1 and
@@ -172,13 +172,13 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def large_straight( d1,  d2,  d3,  d4,  d5):
+    def large_straight(dice1, dice2, dice3, dice4, dice5):
         tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+        tallies[dice1-1] += 1
+        tallies[dice2-1] += 1
+        tallies[dice3-1] += 1
+        tallies[dice4-1] += 1
+        tallies[dice5-1] += 1
         if (tallies[1] == 1 and
             tallies[2] == 1 and
             tallies[3] == 1 and
@@ -188,7 +188,7 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def full_house( d1,  d2,  d3,  d4,  d5):
+    def full_house(dice1, dice2, dice3, dice4, dice5):
         tallies = []
         _2 = False
         i = 0
@@ -197,11 +197,11 @@ class Yahtzee:
         _3_at = 0
 
         tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+        tallies[dice1-1] += 1
+        tallies[dice2-1] += 1
+        tallies[dice3-1] += 1
+        tallies[dice4-1] += 1
+        tallies[dice5-1] += 1
 
         for i in range(6):
             if (tallies[i] == 2): 
