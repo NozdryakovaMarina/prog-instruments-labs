@@ -96,7 +96,7 @@ class Yahtzee:
         return sum
     
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
+    def one_pair( d1,  d2,  d3,  d4,  d5):
         counts = [0]*6
         counts[d1-1] += 1
         counts[d2-1] += 1
@@ -156,7 +156,7 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def smallStraight( d1,  d2,  d3,  d4,  d5):
+    def small_straight( d1,  d2,  d3,  d4,  d5):
         tallies = [0]*6
         tallies[d1-1] += 1
         tallies[d2-1] += 1
@@ -172,7 +172,7 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def largeStraight( d1,  d2,  d3,  d4,  d5):
+    def large_straight( d1,  d2,  d3,  d4,  d5):
         tallies = [0]*6
         tallies[d1-1] += 1
         tallies[d2-1] += 1
@@ -188,7 +188,7 @@ class Yahtzee:
         return 0
     
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
+    def full_house( d1,  d2,  d3,  d4,  d5):
         tallies = []
         _2 = False
         i = 0
