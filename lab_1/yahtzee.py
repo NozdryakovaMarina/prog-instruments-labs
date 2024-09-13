@@ -45,7 +45,7 @@ class Yahtzee:
     sixes()
         Returns the score for sixes in the given dice.
     """
-    
+
     @staticmethod
     def chance(dice1: int, dice2: int, dice3: int, dice4: int, dice5: int) -> int:
         """
@@ -472,3 +472,4 @@ class Yahtzee:
             return pair_value * 2 + triplet_value * 3
         else:
             return 0
+          
